@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge"> <!-- Ensures compatibility with older IE versions -->
+  <title>Whiteboard</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- Main drawing container -->
+  <section class="whiteboard" id="whiteboard">
+    <h1 id="boardTitle">blBoard</h1>
+    <!-- Toolbar for selecting drawing tools -->
+    <aside class="toolbar" aria-label="Drawing tools">
+      
+      <!-- Rectangle tool with options for filled or border -->
+      <div class="dropdown">
+        <button class="button" id="rectangleBtn" aria-haspopup="true" aria-expanded="false">Rectangle</button>
+        <div class="dropdown-content" id="rectangleMenu" role="menu">
+          <button class="option" id="rectangleFilled" role="menuitem">Filled</button>
+          <button class="option" id="rectangleBorder" role="menuitem">Border</button>
+        </div>
+      </div>
+      
+      <!-- Circle tool with options for filled or border -->
+      <div class="dropdown">
+        <button class="button" id="circleBtn" aria-haspopup="true" aria-expanded="false">Circle</button>
+        <div class="dropdown-content" id="circleMenu" role="menu">
+          <button class="option" id="circleFilled" role="menuitem">Filled</button>
+          <button class="option" id="circleBorder" role="menuitem">Border</button>
+        </div>
+      </div>
+      
+      <!-- Line tool with size options -->
+      <div class="dropdown">
+        <button class="button" id="lineBtn" aria-haspopup="true" aria-expanded="false">Line</button>
+        <div class="dropdown-content" id="lineMenu" role="menu">
+          <button class="option" id="lineSmall" role="menuitem">Small</button>
+          <button class="option" id="lineMedium" role="menuitem">Medium</button>
+          <button class="option" id="lineLarge" role="menuitem">Large</button>
+        </div>
+      </div>
+      
+      <!-- Arrow tool with size options -->
+      <div class="dropdown">
+        <button class="button" id="arrowBtn" aria-haspopup="true" aria-expanded="false">Arrow</button>
+        <div class="dropdown-content" id="arrowMenu" role="menu">
+          <button class="option" id="arrowSmall" role="menuitem">Small</button>
+          <button class="option" id="arrowMedium" role="menuitem">Medium</button>
+          <button class="option" id="arrowLarge" role="menuitem">Large</button>
+        </div>
+      </div>
+      
+      <!-- Color Picker with various colors -->
+      <div class="dropdown">
+        <button class="button" id="colorPickerBtn" aria-haspopup="true" aria-expanded="false">Color</button>
+        <div class="dropdown-content" id="colorPickerMenu" role="menu">
+          <!-- Grey -->
+          <button class="option" data-color="#d1d1d1" style="background-color: #d1d1d1; color: black;" role="menuitem">Light</button>
+          <button class="option" data-color="#424242" style="background-color: #424242; color: white;" role="menuitem">Charcoal</button>
+      
+          <!-- Green -->
+          <button class="option" data-color="#9be4a6" style="background-color: #9be4a6; color: black;" role="menuitem">Mint</button>
+          <button class="option" data-color="#388e3c" style="background-color: #388e3c; color: white;" role="menuitem">Lime</button>
+      
+          <!-- Orange -->
+          <button class="option" data-color="#ffbb33" style="background-color: #ffbb33; color: black;" role="menuitem">Peach</button>
+          <button class="option" data-color="#f57c00" style="background-color: #f57c00; color: black;" role="menuitem">Tangerine</button>
+      
+          <!-- Mustard Yellow -->
+          <button class="option" data-color="#f6d02f" style="background-color: #f6d02f; color: black;" role="menuitem">Mellow</button>
+          <button class="option" data-color="#f2b900" style="background-color: #f2b900; color: black;" role="menuitem">Golden</button>
+      
+          <!-- Red -->
+          <button class="option" data-color="#ff4747" style="background-color: #ff4747; color: white;" role="menuitem">Crimson</button>
+      
+          <!-- Blue -->
+          <button class="option" data-color="#4e8ef7" style="background-color: #4e8ef7; color: white;" role="menuitem">Blue</button>
+      
+          <!-- Purple -->
+          <button class="option" data-color="#9c27b0" style="background-color: #9c27b0; color: white;" role="menuitem">Purple</button>
+        </div>
+      </div>
+      
+      <!-- Buttons to clear the canvas and save the image -->
+      <div class="action-buttons">
+        <button class="button" id="clearBtn" aria-label="Clear the drawing area">Clear</button>
+        <button class="button" id="saveImageBtn" aria-label="Save the drawing as an image">Save Image</button>
+      </div>
+
+    </aside>
+
+    <!-- Editable drawing area -->
+    <div id="drawingArea" contenteditable="true" aria-label="Drawing space" role="region"></div>
+  </section>
+
+  <!-- External scripts -->
+  <script src="script.js"></script>
+  <script src="html2canvas.js"></script>
+
+</body>
+</html>
